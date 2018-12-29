@@ -1,0 +1,17 @@
+.\flash\fram.o: User\fram.c
+.\flash\fram.o: .\User\fram.h
+.\flash\fram.o: .\CMSIS_M3\LPC177x_8x.h
+.\flash\fram.o: .\CMSIS_M3\core_cm3.h
+.\flash\fram.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\flash\fram.o: ..\Common\CoreSupport\core_cmInstr.h
+.\flash\fram.o: ..\Common\CoreSupport\core_cmFunc.h
+.\flash\fram.o: ..\Common\Drivers\include\lpc_types.h
+.\flash\fram.o: .\Ports\os_cpu.h
+.\flash\fram.o: .\CMSIS_M3\system_LPC177x_8x.h
+.\flash\fram.o: .\uCOS-II\ucos_ii.h
+.\flash\fram.o: .\uCOS-II\os_cfg.h
+.\flash\fram.o: .\BSP\ssp.h
+.\flash\fram.o: .\BSP\gpio.h
+.\flash\fram.o: .\Code\print.h
+.\flash\fram.o: .\BSP\uart.h
+.\flash\fram.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

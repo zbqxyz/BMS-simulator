@@ -1,0 +1,11 @@
+.\flash\lpc177x_8x_systick.o: ..\Common\Drivers\source\lpc177x_8x_systick.c
+.\flash\lpc177x_8x_systick.o: ..\Common\Drivers\include\lpc177x_8x_systick.h
+.\flash\lpc177x_8x_systick.o: .\CMSIS_M3\LPC177x_8x.h
+.\flash\lpc177x_8x_systick.o: .\CMSIS_M3\core_cm3.h
+.\flash\lpc177x_8x_systick.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\flash\lpc177x_8x_systick.o: ..\Common\CoreSupport\core_cmInstr.h
+.\flash\lpc177x_8x_systick.o: ..\Common\CoreSupport\core_cmFunc.h
+.\flash\lpc177x_8x_systick.o: ..\Common\Drivers\include\lpc_types.h
+.\flash\lpc177x_8x_systick.o: .\Ports\os_cpu.h
+.\flash\lpc177x_8x_systick.o: ..\Common\Drivers\include\lpc177x_8x_clkpwr.h
+.\flash\lpc177x_8x_systick.o: .\CMSIS_M3\system_LPC177x_8x.h

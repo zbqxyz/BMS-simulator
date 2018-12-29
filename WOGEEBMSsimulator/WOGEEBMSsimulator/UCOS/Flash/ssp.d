@@ -1,0 +1,10 @@
+.\flash\ssp.o: BSP\ssp.c
+.\flash\ssp.o: .\BSP\ssp.h
+.\flash\ssp.o: .\CMSIS_M3\LPC177x_8x.h
+.\flash\ssp.o: .\CMSIS_M3\core_cm3.h
+.\flash\ssp.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\flash\ssp.o: ..\Common\CoreSupport\core_cmInstr.h
+.\flash\ssp.o: ..\Common\CoreSupport\core_cmFunc.h
+.\flash\ssp.o: ..\Common\Drivers\include\lpc_types.h
+.\flash\ssp.o: .\Ports\os_cpu.h
+.\flash\ssp.o: .\CMSIS_M3\system_LPC177x_8x.h

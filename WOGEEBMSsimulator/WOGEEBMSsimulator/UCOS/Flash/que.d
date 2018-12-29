@@ -1,0 +1,12 @@
+.\flash\que.o: User\que.c
+.\flash\que.o: .\User\que.h
+.\flash\que.o: .\CMSIS_M3\LPC177x_8x.h
+.\flash\que.o: .\CMSIS_M3\core_cm3.h
+.\flash\que.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\flash\que.o: ..\Common\CoreSupport\core_cmInstr.h
+.\flash\que.o: ..\Common\CoreSupport\core_cmFunc.h
+.\flash\que.o: ..\Common\Drivers\include\lpc_types.h
+.\flash\que.o: .\Ports\os_cpu.h
+.\flash\que.o: .\CMSIS_M3\system_LPC177x_8x.h
+.\flash\que.o: .\uCOS-II\ucos_ii.h
+.\flash\que.o: .\uCOS-II\os_cfg.h

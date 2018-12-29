@@ -1,0 +1,17 @@
+.\flash\norflash.o: User\norflash.c
+.\flash\norflash.o: .\User\norflash.h
+.\flash\norflash.o: .\CMSIS_M3\LPC177x_8x.h
+.\flash\norflash.o: .\CMSIS_M3\core_cm3.h
+.\flash\norflash.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\flash\norflash.o: ..\Common\CoreSupport\core_cmInstr.h
+.\flash\norflash.o: ..\Common\CoreSupport\core_cmFunc.h
+.\flash\norflash.o: ..\Common\Drivers\include\lpc_types.h
+.\flash\norflash.o: .\Ports\os_cpu.h
+.\flash\norflash.o: .\CMSIS_M3\system_LPC177x_8x.h
+.\flash\norflash.o: .\uCOS-II\ucos_ii.h
+.\flash\norflash.o: .\uCOS-II\os_cfg.h
+.\flash\norflash.o: .\BSP\ssp.h
+.\flash\norflash.o: .\BSP\gpio.h
+.\flash\norflash.o: .\Code\print.h
+.\flash\norflash.o: .\BSP\uart.h
+.\flash\norflash.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

@@ -1,0 +1,10 @@
+.\flash\charger.o: User\charger.c
+.\flash\charger.o: .\User\charger.h
+.\flash\charger.o: .\CMSIS_M3\LPC177x_8x.h
+.\flash\charger.o: .\CMSIS_M3\core_cm3.h
+.\flash\charger.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\flash\charger.o: ..\Common\CoreSupport\core_cmInstr.h
+.\flash\charger.o: ..\Common\CoreSupport\core_cmFunc.h
+.\flash\charger.o: ..\Common\Drivers\include\lpc_types.h
+.\flash\charger.o: .\Ports\os_cpu.h
+.\flash\charger.o: .\CMSIS_M3\system_LPC177x_8x.h
