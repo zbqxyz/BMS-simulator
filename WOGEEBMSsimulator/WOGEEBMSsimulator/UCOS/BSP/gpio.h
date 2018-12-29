@@ -19,9 +19,9 @@
 #define Battery_SWITCH_ON()   	LPC_GPIO1->DIR |= Battery_SWITCH; LPC_GPIO1->SET |= Battery_SWITCH     				 
 #define Battery_SWITCH_OFF()    LPC_GPIO1->DIR |= Battery_SWITCH; LPC_GPIO1->CLR |= Battery_SWITCH
 
-#define FAN_SWITCH        	(1ul << 29)                             	 			                     
-#define FAN_SWITCH_ON()   	LPC_GPIO1->DIR |= FAN_SWITCH; LPC_GPIO1->SET |= FAN_SWITCH     				 
-#define FAN_SWITCH_OFF()   LPC_GPIO1->DIR |= FAN_SWITCH; LPC_GPIO1->CLR |= FAN_SWITCH
+#define FAN_SWITCH        	(1ul << 1)                             	 			                     
+#define FAN_SWITCH_ON()   	LPC_GPIO0->DIR |= FAN_SWITCH; LPC_GPIO0->SET |= FAN_SWITCH     				 
+#define FAN_SWITCH_OFF()   LPC_GPIO0->DIR |= FAN_SWITCH; LPC_GPIO0->CLR |= FAN_SWITCH
 
 
 #define GreenLED        	(1ul << 25)                             	 			                     
@@ -104,21 +104,6 @@
 #define DI4_INT_Status() 	  (!(LPC_GPIO1->PIN & DI4_INT))	       //¼ì²â²¦Âë¿ª¹ØÊäÈë×´Ì¬    
  
 extern void GPIOInit(void );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

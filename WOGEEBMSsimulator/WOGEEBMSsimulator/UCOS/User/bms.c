@@ -520,6 +520,7 @@ void CRO_Analyse(void)
 							 SOChargedTime=0;
 							 BMS_BCL();
 					     BMS_BCS();
+							 FAN_SWITCH_ON();
 			       }	
 				}
 }	

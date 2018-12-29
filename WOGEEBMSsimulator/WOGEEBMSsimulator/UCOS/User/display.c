@@ -159,6 +159,7 @@ static void ReadDataProcess(void)
 					    BMSMessage.BMSStopFlag=0;
 					    Battery_SWITCH_OFF();
 					    DC_SWITCH_OFF();
+					    FAN_SWITCH_OFF();
 						break;	
 					
 					case DW_ADDR_STOP_INPUT:                                                  //停止
@@ -217,7 +218,7 @@ static void ReadDataProcess(void)
 						   AscToHexStr(RDwinMessage.Data,Sys_PARA.MeterNO,12);			
 						break;							
 					
-					case DW_ADDR_VIN_INPUT:                                                    //车辆识别码		todu	
+					case DW_ADDR_VIN_INPUT:                                                    //车辆识别码			
               AscToHexStr(RDwinMessage.Data,BMSMessage.VIN,34);										
 						break;										
 				
@@ -311,10 +312,14 @@ static void DisplayVariableValue(void)
 	
 	// 显示文本文档
 	if(!DI2_INT_Status())                                                                  //辅源状态 
+	{
   	DisplayText(DW_ADDR_Auxiliary_POWER,Power_ERR,sizeof(Power_ERR)-1);
+	}
 	else
+	{
+		DisplayText(DW_ADDR_Auxiliary_POWER,0,4);                                            //清除显示
 	  DisplayText(DW_ADDR_Auxiliary_POWER,Power_RHT,sizeof(Power_RHT)-1);
-	
+	}
 	switch(BMSMessage.ChargeMode)                                                          //充电模式
 	{
 		case 1:
@@ -447,7 +452,7 @@ static void Dwin_ChangeVariableValue_FrameN(unsigned short addr,uint8_t* pdata,u
 **********************************************************************************************************/
 static void DisplayText(uint16_t addr,uint8_t *text,uint8_t len)
 {
-		uint8_t dspbuf[50];
+		uint8_t dspbuf[len+6];
 		dspbuf[0] = 0x5a;
 		dspbuf[1] = 0xa5;
 		dspbuf[2] = len+3;
@@ -455,7 +460,7 @@ static void DisplayText(uint16_t addr,uint8_t *text,uint8_t len)
 		dspbuf[4]=addr>>8;
 		dspbuf[5]=addr%256;
 		memcpy(dspbuf+6,text,len);
-		UART1SendStr(dspbuf,6+len);
+		UART1SendStr(dspbuf,len+6);
   	OSTimeDlyHMSM(0,0,0,5);
 }
 

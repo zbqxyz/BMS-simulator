@@ -3,11 +3,11 @@
 <title>Static Call Graph - [.\Flash\Demo.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Flash\Demo.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060422: Last Updated: Fri Dec 28 18:06:50 2018
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060422: Last Updated: Sat Dec 29 15:08:57 2018
 <BR><P>
 <H3>Maximum Stack Usage =        488 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
-taskWelink &rArr; WelinkMain &rArr; MsaLogin &rArr; RecvDataHandle &rArr; DownstreamCmdHandle &rArr; cmd_105_proess &rArr; UpstreamCmdHandle &rArr; HardwareSendData &rArr; WriteSocketDataToBuffer &rArr; ReadSocket_2Byte &rArr; EthernetSendByte
+taskWelink &rArr; WelinkMain &rArr; MsaLogin &rArr; RecvDataHandle &rArr; DownstreamCmdHandle &rArr; cmd_3_proess &rArr; UpstreamCmdHandle &rArr; HardwareSendData &rArr; WriteSocketDataToBuffer &rArr; ReadSocket_2Byte &rArr; EthernetSendByte
 <P>
 <H3>
 Functions with no stack information
@@ -292,9 +292,9 @@ Global Symbols
 
 <P><STRONG><a name="[12c]"></a>srand</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, rand.o(.text), UNUSED)
 
-<P><STRONG><a name="[80]"></a>__aeabi_memcpy</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, memcpya.o(.text))
+<P><STRONG><a name="[81]"></a>__aeabi_memcpy</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, memcpya.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReadDataProcess
-<LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Dwin_ChangeVariableValue_FrameN
+<LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Dwin_ChangeVariableValue_FrameN
 <LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DisplayText
 <LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpstreamCmdHandle
 </UL>
@@ -451,15 +451,7 @@ Global Symbols
 <P><STRONG><a name="[139]"></a>__decompress1</STRONG> (Thumb, 86 bytes, Stack size unknown bytes, __dczerorl2.o(.text), UNUSED)
 
 <P><STRONG><a name="[b3]"></a>OS_ENTER_CRITICAL</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, os_cpu_a.o(UCOSII_ASM))
-<BR><BR>[Called By]<UL><LI><a href="#[39]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_TaskStat
-<LI><a href="#[38]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_TaskIdle
-<LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_TCBInit
-<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_Sched
-<LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSStatInit
-<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSSchedUnlock
-<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSSchedLock
-<LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSEventNameSet
-<LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTimeTick
+<BR><BR>[Called By]<UL><LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTimeTick
 <LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSIntExit
 <LI><a href="#[9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tickISRHandler
 <LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTaskCreate
@@ -471,18 +463,18 @@ Global Symbols
 <LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTaskStkChk
 <LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTaskNameSet
 <LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTaskCreateExt
+<LI><a href="#[39]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_TaskStat
+<LI><a href="#[38]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_TaskIdle
+<LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_TCBInit
+<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_Sched
+<LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSStatInit
+<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSSchedUnlock
+<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSSchedLock
+<LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSEventNameSet
 </UL>
 
 <P><STRONG><a name="[b4]"></a>OS_EXIT_CRITICAL</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, os_cpu_a.o(UCOSII_ASM))
-<BR><BR>[Called By]<UL><LI><a href="#[39]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_TaskStat
-<LI><a href="#[38]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_TaskIdle
-<LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_TCBInit
-<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_Sched
-<LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSStatInit
-<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSSchedUnlock
-<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSSchedLock
-<LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSEventNameSet
-<LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTimeTick
+<BR><BR>[Called By]<UL><LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTimeTick
 <LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSIntExit
 <LI><a href="#[9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tickISRHandler
 <LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTaskCreate
@@ -494,6 +486,14 @@ Global Symbols
 <LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTaskStkChk
 <LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTaskNameSet
 <LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTaskCreateExt
+<LI><a href="#[39]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_TaskStat
+<LI><a href="#[38]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_TaskIdle
+<LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_TCBInit
+<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_Sched
+<LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSStatInit
+<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSSchedUnlock
+<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSSchedLock
+<LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSEventNameSet
 </UL>
 
 <P><STRONG><a name="[d1]"></a>OSStartHighRdy</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, os_cpu_a.o(UCOSII_ASM))
@@ -535,20 +535,22 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 80 + Unknown Stack Size
 <LI>Call Chain = BMSMain &rArr; Charger_RECData_Pro &rArr; CST_Analyse &rArr; BMS_BSD &rArr; OSTimeDlyHMSM &rArr; OSTimeDly &rArr; OS_Sched
 </UL>
-<BR>[Calls]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BST
-<LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BSM
-<LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BCS
+<BR>[Calls]<UL><LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BCS
 <LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BCL
 <LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Charger_RECData_Pro
+<LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BST
+<LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BSM
 </UL>
 <BR>[Called By]<UL><LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;taskBMS
 </UL>
 
 <P><STRONG><a name="[6a]"></a>BMS_DATA_Packet_Analyse</STRONG> (Thumb, 138 bytes, Stack size 8 bytes, bms.o(i.BMS_DATA_Packet_Analyse))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64 + Unknown Stack Size
-<LI>Call Chain = BMS_DATA_Packet_Analyse &rArr; BMS_BRM_Msg06 &rArr; OSTimeDlyHMSM &rArr; OSTimeDly &rArr; OS_Sched
+<LI>Call Chain = BMS_DATA_Packet_Analyse &rArr; BMS_BCP_DATA_01 &rArr; OSTimeDlyHMSM &rArr; OSTimeDly &rArr; OS_Sched
 </UL>
-<BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BRM_Msg07
+<BR>[Calls]<UL><LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BCP_DATA_02
+<LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BCP_DATA_01
+<LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BRM_Msg07
 <LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BRM_Msg06
 <LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BRM_Msg05
 <LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BRM_Msg04
@@ -557,8 +559,6 @@ Global Symbols
 <LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BRM_Msg01
 <LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BCS_Data_02
 <LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BCS_Data_01
-<LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BCP_DATA_02
-<LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BCP_DATA_01
 </UL>
 <BR>[Called By]<UL><LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Charger_RECData_Pro
 </UL>
@@ -622,21 +622,21 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[72]"></a>CRM_Analyse</STRONG> (Thumb, 48 bytes, Stack size 8 bytes, bms.o(i.CRM_Analyse))
-<BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = CRM_Analyse &rArr; BMS_BRM &rArr; WriteCAN0 &rArr; CANSend
+<BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = CRM_Analyse &rArr; BMS_BCP &rArr; WriteCAN0 &rArr; CANSend
 </UL>
-<BR>[Calls]<UL><LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BRM
-<LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BCP
+<BR>[Calls]<UL><LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BCP
+<LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BRM
 </UL>
 <BR>[Called By]<UL><LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Charger_RECData_Pro
 </UL>
 
-<P><STRONG><a name="[73]"></a>CRO_Analyse</STRONG> (Thumb, 68 bytes, Stack size 8 bytes, bms.o(i.CRO_Analyse))
+<P><STRONG><a name="[73]"></a>CRO_Analyse</STRONG> (Thumb, 90 bytes, Stack size 8 bytes, bms.o(i.CRO_Analyse))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64 + Unknown Stack Size
 <LI>Call Chain = CRO_Analyse &rArr; BMS_BRO &rArr; OSTimeDlyHMSM &rArr; OSTimeDly &rArr; OS_Sched
 </UL>
-<BR>[Calls]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BRO
-<LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BCS
+<BR>[Calls]<UL><LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BCS
 <LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BCL
+<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BRO
 </UL>
 <BR>[Called By]<UL><LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Charger_RECData_Pro
 </UL>
@@ -674,8 +674,8 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[7c]"></a>DisplayMain</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, display.o(i.DisplayMain))
-<BR><BR>[Stack]<UL><LI>Max Depth = 176 + Unknown Stack Size
-<LI>Call Chain = DisplayMain &rArr; DisplayVariableValue &rArr; DisplayText &rArr; OSTimeDlyHMSM &rArr; OSTimeDly &rArr; OS_Sched
+<BR><BR>[Stack]<UL><LI>Max Depth = 136 + Unknown Stack Size
+<LI>Call Chain = DisplayMain &rArr; DisplayVariableValue &rArr; Dwin_ChangeVariableValue_FrameN &rArr; OSTimeDlyHMSM &rArr; OSTimeDly &rArr; OS_Sched
 </UL>
 <BR>[Calls]<UL><LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReadDataProcess
 <LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DisplayVariableValue
@@ -683,23 +683,23 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;taskDisplay
 </UL>
 
-<P><STRONG><a name="[85]"></a>DownstreamCmdHandle</STRONG> (Thumb, 396 bytes, Stack size 32 bytes, welink.o(i.DownstreamCmdHandle))
+<P><STRONG><a name="[87]"></a>DownstreamCmdHandle</STRONG> (Thumb, 396 bytes, Stack size 32 bytes, welink.o(i.DownstreamCmdHandle))
 <BR><BR>[Stack]<UL><LI>Max Depth = 456 + Unknown Stack Size
-<LI>Call Chain = DownstreamCmdHandle &rArr; cmd_105_proess &rArr; UpstreamCmdHandle &rArr; HardwareSendData &rArr; WriteSocketDataToBuffer &rArr; ReadSocket_2Byte &rArr; EthernetSendByte
+<LI>Call Chain = DownstreamCmdHandle &rArr; cmd_3_proess &rArr; UpstreamCmdHandle &rArr; HardwareSendData &rArr; WriteSocketDataToBuffer &rArr; ReadSocket_2Byte &rArr; EthernetSendByte
 </UL>
-<BR>[Calls]<UL><LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_107_proess
-<LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_105_proess
-<LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_103_proess
-<LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_101_proess
-<LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_9_proess
-<LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_7_proess
-<LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_5_proess
-<LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_3_proess
-<LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_205_proess
-<LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_203_proess
-<LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_201_proess
-<LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_1_proess
-<LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_109_proess
+<BR>[Calls]<UL><LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_9_proess
+<LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_7_proess
+<LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_5_proess
+<LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_3_proess
+<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_205_proess
+<LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_203_proess
+<LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_201_proess
+<LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_1_proess
+<LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_109_proess
+<LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_107_proess
+<LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_105_proess
+<LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_103_proess
+<LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_101_proess
 </UL>
 <BR>[Called By]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RecvDataHandle
 </UL>
@@ -809,7 +809,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpstreamCmdHandle
 </UL>
 
-<P><STRONG><a name="[83]"></a>HexToAscStr</STRONG> (Thumb, 56 bytes, Stack size 16 bytes, calculator.o(i.HexToAscStr))
+<P><STRONG><a name="[85]"></a>HexToAscStr</STRONG> (Thumb, 56 bytes, Stack size 16 bytes, calculator.o(i.HexToAscStr))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = HexToAscStr
 </UL>
 <BR>[Called By]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DisplayVariableValue
@@ -843,7 +843,7 @@ Global Symbols
 
 <P><STRONG><a name="[ae]"></a>MsaLogin</STRONG> (Thumb, 116 bytes, Stack size 16 bytes, welink.o(i.MsaLogin))
 <BR><BR>[Stack]<UL><LI>Max Depth = 480 + Unknown Stack Size
-<LI>Call Chain = MsaLogin &rArr; RecvDataHandle &rArr; DownstreamCmdHandle &rArr; cmd_105_proess &rArr; UpstreamCmdHandle &rArr; HardwareSendData &rArr; WriteSocketDataToBuffer &rArr; ReadSocket_2Byte &rArr; EthernetSendByte
+<LI>Call Chain = MsaLogin &rArr; RecvDataHandle &rArr; DownstreamCmdHandle &rArr; cmd_3_proess &rArr; UpstreamCmdHandle &rArr; HardwareSendData &rArr; WriteSocketDataToBuffer &rArr; ReadSocket_2Byte &rArr; EthernetSendByte
 </UL>
 <BR>[Calls]<UL><LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTimeDly
 <LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RecvDataHandle
@@ -891,8 +891,7 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 160 + Unknown Stack Size
 <LI>Call Chain = OSInit &rArr; OSTmr_Init &rArr; OSTmr_InitTask &rArr; OSTaskCreateExt &rArr; OS_TCBInit
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSDebugInit
-<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_InitTaskStat
+<BR>[Calls]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_InitTaskStat
 <LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_InitTaskIdle
 <LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_InitTCBList
 <LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_InitRdyList
@@ -904,6 +903,7 @@ Global Symbols
 <LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_MemInit
 <LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_FlagInit
 <LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTmr_Init
+<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSDebugInit
 </UL>
 <BR>[Called By]<UL><LI><a href="#[33]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -938,9 +938,9 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 16 + Unknown Stack Size
 <LI>Call Chain = OSSchedUnlock &rArr; OS_Sched
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_Sched
-<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_EXIT_CRITICAL
+<BR>[Calls]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_EXIT_CRITICAL
 <LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_ENTER_CRITICAL
+<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_Sched
 </UL>
 <BR>[Called By]<UL><LI><a href="#[37]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTmr_Task
 </UL>
@@ -949,9 +949,9 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 16 + Unknown Stack Size
 <LI>Call Chain = OSSemCreate
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_EventWaitListInit
-<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_EXIT_CRITICAL
+<BR>[Calls]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_EXIT_CRITICAL
 <LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_ENTER_CRITICAL
+<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_EventWaitListInit
 </UL>
 <BR>[Called By]<UL><LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTmr_Init
 </UL>
@@ -960,11 +960,11 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 24 + Unknown Stack Size
 <LI>Call Chain = OSSemPend &rArr; OS_Sched
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_Sched
+<BR>[Calls]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_EXIT_CRITICAL
+<LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_ENTER_CRITICAL
+<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_Sched
 <LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_EventTaskWait
 <LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_EventTaskRemove
-<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_EXIT_CRITICAL
-<LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_ENTER_CRITICAL
 </UL>
 <BR>[Called By]<UL><LI><a href="#[37]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTmr_Task
 </UL>
@@ -973,10 +973,10 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 64 + Unknown Stack Size
 <LI>Call Chain = OSSemPost &rArr; OS_EventTaskRdy &rArr; OS_EventTaskRemoveMulti
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_Sched
-<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_EventTaskRdy
-<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_EXIT_CRITICAL
+<BR>[Calls]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_EXIT_CRITICAL
 <LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_ENTER_CRITICAL
+<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_Sched
+<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_EventTaskRdy
 </UL>
 <BR>[Called By]<UL><LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTmrSignal
 </UL>
@@ -1006,11 +1006,11 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 80 + Unknown Stack Size
 <LI>Call Chain = OSTaskCreate &rArr; OS_TCBInit
 </UL>
-<BR>[Calls]<UL><LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_TCBInit
-<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_Sched
-<LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTaskStkInit
+<BR>[Calls]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTaskStkInit
 <LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_EXIT_CRITICAL
 <LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_ENTER_CRITICAL
+<LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_TCBInit
+<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_Sched
 </UL>
 <BR>[Called By]<UL><LI><a href="#[33]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 <LI><a href="#[3a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;taskStart
@@ -1020,12 +1020,12 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 96 + Unknown Stack Size
 <LI>Call Chain = OSTaskCreateExt &rArr; OS_TCBInit
 </UL>
-<BR>[Calls]<UL><LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_TCBInit
-<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_Sched
-<LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTaskStkInit
+<BR>[Calls]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTaskStkInit
 <LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_EXIT_CRITICAL
 <LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_ENTER_CRITICAL
 <LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_TaskStkClr
+<LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_TCBInit
+<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_Sched
 </UL>
 <BR>[Called By]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_InitTaskStat
 <LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_InitTaskIdle
@@ -1077,12 +1077,12 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 32 + Unknown Stack Size
 <LI>Call Chain = OSTaskSuspend &rArr; OS_Sched
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_Sched
-<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_EXIT_CRITICAL
+<BR>[Calls]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_EXIT_CRITICAL
 <LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_ENTER_CRITICAL
+<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_Sched
 </UL>
-<BR>[Called By]<UL><LI><a href="#[39]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_TaskStat
-<LI><a href="#[3a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;taskStart
+<BR>[Called By]<UL><LI><a href="#[3a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;taskStart
+<LI><a href="#[39]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_TaskStat
 </UL>
 
 <P><STRONG><a name="[36]"></a>OSTaskSwHook</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, os_cpu_c.o(i.OSTaskSwHook))
@@ -1092,19 +1092,19 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 24 + Unknown Stack Size
 <LI>Call Chain = OSTimeDly &rArr; OS_Sched
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_Sched
-<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_EXIT_CRITICAL
+<BR>[Calls]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_EXIT_CRITICAL
 <LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_ENTER_CRITICAL
+<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_Sched
 </UL>
-<BR>[Called By]<UL><LI><a href="#[39]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_TaskStat
+<BR>[Called By]<UL><LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTimeDlyHMSM
+<LI><a href="#[39]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_TaskStat
 <LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSStatInit
-<LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BRM_Msg03
-<LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTimeDlyHMSM
 <LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;W5500SocketRXD
 <LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;W5500Init
 <LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SocketConnect
 <LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DetectGateway
 <LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReadDataProcess
+<LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BRM_Msg03
 <LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MsaLogin
 <LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HardwareSendData
 </UL>
@@ -1115,7 +1115,17 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTimeDly
 </UL>
-<BR>[Called By]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BSD
+<BR>[Called By]<UL><LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BCP_DATA_01
+<LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WelinkMain
+<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MeterMain
+<LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;taskMeter
+<LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;taskDisplay
+<LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;taskBMS
+<LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART2SendStr
+<LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Dwin_ChangeVariableValue_FrameN
+<LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Dwin_ChangeVariableValue_Frame1
+<LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DisplayText
+<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BSD
 <LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BRO
 <LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BRM_Msg06
 <LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BRM_Msg05
@@ -1125,16 +1135,6 @@ Global Symbols
 <LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BRM_Msg01
 <LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BEM
 <LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BCS_Data_01
-<LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BCP_DATA_01
-<LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WelinkMain
-<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MeterMain
-<LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;taskMeter
-<LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;taskDisplay
-<LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;taskBMS
-<LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART2SendStr
-<LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Dwin_ChangeVariableValue_FrameN
-<LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Dwin_ChangeVariableValue_Frame1
-<LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DisplayText
 <LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SendDataHandle
 </UL>
 
@@ -1171,10 +1171,10 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 152 + Unknown Stack Size
 <LI>Call Chain = OSTmr_Init &rArr; OSTmr_InitTask &rArr; OSTaskCreateExt &rArr; OS_TCBInit
 </UL>
-<BR>[Calls]<UL><LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_MemClr
-<LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSEventNameSet
-<LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTmr_InitTask
+<BR>[Calls]<UL><LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTmr_InitTask
 <LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSSemCreate
+<LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_MemClr
+<LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSEventNameSet
 </UL>
 <BR>[Called By]<UL><LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSInit
 </UL>
@@ -1191,8 +1191,8 @@ Global Symbols
 <P><STRONG><a name="[cd]"></a>OS_EventTaskRemove</STRONG> (Thumb, 42 bytes, Stack size 8 bytes, os_core.o(i.OS_EventTaskRemove))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = OS_EventTaskRemove
 </UL>
-<BR>[Called By]<UL><LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_EventTaskRdy
-<LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSSemPend
+<BR>[Called By]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSSemPend
+<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_EventTaskRdy
 </UL>
 
 <P><STRONG><a name="[e2]"></a>OS_EventTaskRemoveMulti</STRONG> (Thumb, 58 bytes, Stack size 20 bytes, os_core.o(i.OS_EventTaskRemoveMulti))
@@ -1253,13 +1253,13 @@ Global Symbols
 <LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_EXIT_CRITICAL
 <LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_ENTER_CRITICAL
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSSchedUnlock
-<LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTaskCreate
+<BR>[Called By]<UL><LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTaskCreate
 <LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSSemPost
 <LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSSemPend
 <LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTimeDly
 <LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTaskSuspend
 <LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTaskCreateExt
+<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSSchedUnlock
 </UL>
 
 <P><STRONG><a name="[d5]"></a>OS_TCBInit</STRONG> (Thumb, 266 bytes, Stack size 40 bytes, os_core.o(i.OS_TCBInit))
@@ -1286,12 +1286,12 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 56 + Unknown Stack Size
 <LI>Call Chain = OS_TaskStat &rArr; OS_TaskStatStkChk &rArr; OSTaskStkChk
 </UL>
-<BR>[Calls]<UL><LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_TaskStatStkChk
-<LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTaskStatHook
+<BR>[Calls]<UL><LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTaskStatHook
 <LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_EXIT_CRITICAL
 <LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_ENTER_CRITICAL
 <LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTimeDly
 <LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTaskSuspend
+<LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_TaskStatStkChk
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> os_core.o(i.OS_InitTaskStat)
 </UL>
@@ -1473,10 +1473,10 @@ Global Symbols
 
 <P><STRONG><a name="[b0]"></a>RecvDataHandle</STRONG> (Thumb, 92 bytes, Stack size 8 bytes, welink.o(i.RecvDataHandle))
 <BR><BR>[Stack]<UL><LI>Max Depth = 464 + Unknown Stack Size
-<LI>Call Chain = RecvDataHandle &rArr; DownstreamCmdHandle &rArr; cmd_105_proess &rArr; UpstreamCmdHandle &rArr; HardwareSendData &rArr; WriteSocketDataToBuffer &rArr; ReadSocket_2Byte &rArr; EthernetSendByte
+<LI>Call Chain = RecvDataHandle &rArr; DownstreamCmdHandle &rArr; cmd_3_proess &rArr; UpstreamCmdHandle &rArr; HardwareSendData &rArr; WriteSocketDataToBuffer &rArr; ReadSocket_2Byte &rArr; EthernetSendByte
 </UL>
 <BR>[Calls]<UL><LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;W5500SocketRXD
-<LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DownstreamCmdHandle
+<LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DownstreamCmdHandle
 </UL>
 <BR>[Called By]<UL><LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WelinkMain
 <LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MsaLogin
@@ -1605,16 +1605,16 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[101]"></a>UART1SendByte</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, uart.o(i.UART1SendByte))
-<BR><BR>[Called By]<UL><LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART1SendStr
+<BR><BR>[Called By]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART1SendStr
 </UL>
 
-<P><STRONG><a name="[81]"></a>UART1SendStr</STRONG> (Thumb, 26 bytes, Stack size 12 bytes, uart.o(i.UART1SendStr))
+<P><STRONG><a name="[82]"></a>UART1SendStr</STRONG> (Thumb, 26 bytes, Stack size 12 bytes, uart.o(i.UART1SendStr))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = UART1SendStr
 </UL>
 <BR>[Calls]<UL><LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART1SendByte
 </UL>
-<BR>[Called By]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Dwin_ChangeVariableValue_FrameN
-<LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Dwin_ChangeVariableValue_Frame1
+<BR>[Called By]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Dwin_ChangeVariableValue_FrameN
+<LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Dwin_ChangeVariableValue_Frame1
 <LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DisplayText
 </UL>
 
@@ -1713,7 +1713,13 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 400 + Unknown Stack Size
 <LI>Call Chain = UpstreamCmdHandle &rArr; HardwareSendData &rArr; WriteSocketDataToBuffer &rArr; ReadSocket_2Byte &rArr; EthernetSendByte
 </UL>
-<BR>[Calls]<UL><LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_108_upload
+<BR>[Calls]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HardwareSendData
+<LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_206_upload
+<LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_204_upload
+<LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_202_upload
+<LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_110_upload
+<LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_10_upload
+<LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_108_upload
 <LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_106_upload
 <LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_104_upload
 <LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_102_upload
@@ -1721,19 +1727,13 @@ Global Symbols
 <LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_06_upload
 <LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_04_upload
 <LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_02_upload
-<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HardwareSendData
-<LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_206_upload
-<LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_204_upload
-<LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_202_upload
-<LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_110_upload
-<LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_10_upload
-<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 </UL>
-<BR>[Called By]<UL><LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_105_proess
-<LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_103_proess
-<LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SendDataHandle
+<BR>[Called By]<UL><LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SendDataHandle
 <LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MsaLogin
-<LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_3_proess
+<LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_3_proess
+<LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_105_proess
+<LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_103_proess
 </UL>
 
 <P><STRONG><a name="[115]"></a>W5500Init</STRONG> (Thumb, 328 bytes, Stack size 24 bytes, ethernet.o(i.W5500Init))
@@ -1785,7 +1785,7 @@ Global Symbols
 
 <P><STRONG><a name="[118]"></a>WelinkMain</STRONG> (Thumb, 46 bytes, Stack size 0 bytes, welink.o(i.WelinkMain))
 <BR><BR>[Stack]<UL><LI>Max Depth = 480 + Unknown Stack Size
-<LI>Call Chain = WelinkMain &rArr; MsaLogin &rArr; RecvDataHandle &rArr; DownstreamCmdHandle &rArr; cmd_105_proess &rArr; UpstreamCmdHandle &rArr; HardwareSendData &rArr; WriteSocketDataToBuffer &rArr; ReadSocket_2Byte &rArr; EthernetSendByte
+<LI>Call Chain = WelinkMain &rArr; MsaLogin &rArr; RecvDataHandle &rArr; DownstreamCmdHandle &rArr; cmd_3_proess &rArr; UpstreamCmdHandle &rArr; HardwareSendData &rArr; WriteSocketDataToBuffer &rArr; ReadSocket_2Byte &rArr; EthernetSendByte
 </UL>
 <BR>[Calls]<UL><LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTimeDlyHMSM
 <LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SendDataHandle
@@ -1801,7 +1801,12 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CANSend
 </UL>
-<BR>[Called By]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BST
+<BR>[Called By]<UL><LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BCS
+<LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BCP_DATA_02
+<LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BCP_DATA_01
+<LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BCP
+<LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BCL
+<LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BST
 <LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BSM
 <LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BSD
 <LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BRO
@@ -1817,11 +1822,6 @@ Global Symbols
 <LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BEM
 <LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BCS_Data_02
 <LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BCS_Data_01
-<LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BCS
-<LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BCP_DATA_02
-<LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BCP_DATA_01
-<LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BCP
-<LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BCL
 </UL>
 
 <P><STRONG><a name="[a4]"></a>WriteSocketDataToBuffer</STRONG> (Thumb, 288 bytes, Stack size 32 bytes, ethernet.o(i.WriteSocketDataToBuffer))
@@ -1907,10 +1907,10 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpstreamCmdHandle
 </UL>
 
-<P><STRONG><a name="[8b]"></a>cmd_101_proess</STRONG> (Thumb, 10 bytes, Stack size 8 bytes, link .o(i.cmd_101_proess))
+<P><STRONG><a name="[8d]"></a>cmd_101_proess</STRONG> (Thumb, 10 bytes, Stack size 8 bytes, link .o(i.cmd_101_proess))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = cmd_101_proess
 </UL>
-<BR>[Called By]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DownstreamCmdHandle
+<BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DownstreamCmdHandle
 </UL>
 
 <P><STRONG><a name="[10d]"></a>cmd_102_upload</STRONG> (Thumb, 98 bytes, Stack size 12 bytes, link .o(i.cmd_102_upload))
@@ -1919,13 +1919,13 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpstreamCmdHandle
 </UL>
 
-<P><STRONG><a name="[8c]"></a>cmd_103_proess</STRONG> (Thumb, 18 bytes, Stack size 16 bytes, link .o(i.cmd_103_proess))
+<P><STRONG><a name="[8e]"></a>cmd_103_proess</STRONG> (Thumb, 18 bytes, Stack size 16 bytes, link .o(i.cmd_103_proess))
 <BR><BR>[Stack]<UL><LI>Max Depth = 416 + Unknown Stack Size
 <LI>Call Chain = cmd_103_proess &rArr; UpstreamCmdHandle &rArr; HardwareSendData &rArr; WriteSocketDataToBuffer &rArr; ReadSocket_2Byte &rArr; EthernetSendByte
 </UL>
 <BR>[Calls]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpstreamCmdHandle
 </UL>
-<BR>[Called By]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DownstreamCmdHandle
+<BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DownstreamCmdHandle
 </UL>
 
 <P><STRONG><a name="[10e]"></a>cmd_104_upload</STRONG> (Thumb, 494 bytes, Stack size 8 bytes, link .o(i.cmd_104_upload))
@@ -1934,13 +1934,13 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpstreamCmdHandle
 </UL>
 
-<P><STRONG><a name="[8d]"></a>cmd_105_proess</STRONG> (Thumb, 30 bytes, Stack size 24 bytes, link .o(i.cmd_105_proess))
+<P><STRONG><a name="[8f]"></a>cmd_105_proess</STRONG> (Thumb, 30 bytes, Stack size 24 bytes, link .o(i.cmd_105_proess))
 <BR><BR>[Stack]<UL><LI>Max Depth = 424 + Unknown Stack Size
 <LI>Call Chain = cmd_105_proess &rArr; UpstreamCmdHandle &rArr; HardwareSendData &rArr; WriteSocketDataToBuffer &rArr; ReadSocket_2Byte &rArr; EthernetSendByte
 </UL>
 <BR>[Calls]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpstreamCmdHandle
 </UL>
-<BR>[Called By]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DownstreamCmdHandle
+<BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DownstreamCmdHandle
 </UL>
 
 <P><STRONG><a name="[10f]"></a>cmd_106_upload</STRONG> (Thumb, 524 bytes, Stack size 24 bytes, link .o(i.cmd_106_upload))
@@ -1952,16 +1952,16 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpstreamCmdHandle
 </UL>
 
-<P><STRONG><a name="[8e]"></a>cmd_107_proess</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, link .o(i.cmd_107_proess))
-<BR><BR>[Called By]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DownstreamCmdHandle
+<P><STRONG><a name="[90]"></a>cmd_107_proess</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, link .o(i.cmd_107_proess))
+<BR><BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DownstreamCmdHandle
 </UL>
 
 <P><STRONG><a name="[110]"></a>cmd_108_upload</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, link .o(i.cmd_108_upload))
 <BR><BR>[Called By]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpstreamCmdHandle
 </UL>
 
-<P><STRONG><a name="[8f]"></a>cmd_109_proess</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, link .o(i.cmd_109_proess))
-<BR><BR>[Called By]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DownstreamCmdHandle
+<P><STRONG><a name="[91]"></a>cmd_109_proess</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, link .o(i.cmd_109_proess))
+<BR><BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DownstreamCmdHandle
 </UL>
 
 <P><STRONG><a name="[10c]"></a>cmd_10_upload</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, link .o(i.cmd_10_upload))
@@ -1972,12 +1972,12 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpstreamCmdHandle
 </UL>
 
-<P><STRONG><a name="[86]"></a>cmd_1_proess</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, link .o(i.cmd_1_proess))
-<BR><BR>[Called By]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DownstreamCmdHandle
+<P><STRONG><a name="[88]"></a>cmd_1_proess</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, link .o(i.cmd_1_proess))
+<BR><BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DownstreamCmdHandle
 </UL>
 
-<P><STRONG><a name="[90]"></a>cmd_201_proess</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, link .o(i.cmd_201_proess))
-<BR><BR>[Called By]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DownstreamCmdHandle
+<P><STRONG><a name="[92]"></a>cmd_201_proess</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, link .o(i.cmd_201_proess))
+<BR><BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DownstreamCmdHandle
 </UL>
 
 <P><STRONG><a name="[112]"></a>cmd_202_upload</STRONG> (Thumb, 418 bytes, Stack size 8 bytes, link .o(i.cmd_202_upload))
@@ -1986,23 +1986,23 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpstreamCmdHandle
 </UL>
 
-<P><STRONG><a name="[91]"></a>cmd_203_proess</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, link .o(i.cmd_203_proess))
-<BR><BR>[Called By]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DownstreamCmdHandle
+<P><STRONG><a name="[93]"></a>cmd_203_proess</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, link .o(i.cmd_203_proess))
+<BR><BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DownstreamCmdHandle
 </UL>
 
 <P><STRONG><a name="[113]"></a>cmd_204_upload</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, link .o(i.cmd_204_upload))
 <BR><BR>[Called By]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpstreamCmdHandle
 </UL>
 
-<P><STRONG><a name="[92]"></a>cmd_205_proess</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, link .o(i.cmd_205_proess))
-<BR><BR>[Called By]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DownstreamCmdHandle
+<P><STRONG><a name="[94]"></a>cmd_205_proess</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, link .o(i.cmd_205_proess))
+<BR><BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DownstreamCmdHandle
 </UL>
 
 <P><STRONG><a name="[114]"></a>cmd_206_upload</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, link .o(i.cmd_206_upload))
 <BR><BR>[Called By]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpstreamCmdHandle
 </UL>
 
-<P><STRONG><a name="[87]"></a>cmd_3_proess</STRONG> (Thumb, 146 bytes, Stack size 24 bytes, link .o(i.cmd_3_proess))
+<P><STRONG><a name="[89]"></a>cmd_3_proess</STRONG> (Thumb, 146 bytes, Stack size 24 bytes, link .o(i.cmd_3_proess))
 <BR><BR>[Stack]<UL><LI>Max Depth = 424 + Unknown Stack Size
 <LI>Call Chain = cmd_3_proess &rArr; UpstreamCmdHandle &rArr; HardwareSendData &rArr; WriteSocketDataToBuffer &rArr; ReadSocket_2Byte &rArr; EthernetSendByte
 </UL>
@@ -2010,42 +2010,41 @@ Global Symbols
 <LI><a href="#[11d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_3_setup_2_proess
 <LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_3_query_2_proess
 </UL>
-<BR>[Called By]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DownstreamCmdHandle
+<BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DownstreamCmdHandle
 </UL>
 
 <P><STRONG><a name="[11c]"></a>cmd_3_query_2_proess</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, link .o(i.cmd_3_query_2_proess))
-<BR><BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_3_proess
+<BR><BR>[Called By]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_3_proess
 </UL>
 
 <P><STRONG><a name="[11d]"></a>cmd_3_setup_2_proess</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, link .o(i.cmd_3_setup_2_proess))
-<BR><BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_3_proess
+<BR><BR>[Called By]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmd_3_proess
 </UL>
 
-<P><STRONG><a name="[88]"></a>cmd_5_proess</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, link .o(i.cmd_5_proess))
-<BR><BR>[Called By]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DownstreamCmdHandle
+<P><STRONG><a name="[8a]"></a>cmd_5_proess</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, link .o(i.cmd_5_proess))
+<BR><BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DownstreamCmdHandle
 </UL>
 
-<P><STRONG><a name="[89]"></a>cmd_7_proess</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, link .o(i.cmd_7_proess))
-<BR><BR>[Called By]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DownstreamCmdHandle
+<P><STRONG><a name="[8b]"></a>cmd_7_proess</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, link .o(i.cmd_7_proess))
+<BR><BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DownstreamCmdHandle
 </UL>
 
-<P><STRONG><a name="[8a]"></a>cmd_9_proess</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, link .o(i.cmd_9_proess))
-<BR><BR>[Called By]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DownstreamCmdHandle
+<P><STRONG><a name="[8c]"></a>cmd_9_proess</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, link .o(i.cmd_9_proess))
+<BR><BR>[Called By]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DownstreamCmdHandle
 </UL>
 
-<P><STRONG><a name="[94]"></a>free</STRONG> (Thumb, 76 bytes, Stack size 8 bytes, malloc.o(i.free))
+<P><STRONG><a name="[83]"></a>free</STRONG> (Thumb, 76 bytes, Stack size 8 bytes, malloc.o(i.free))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = free
 </UL>
-<BR>[Called By]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Dwin_ChangeVariableValue_FrameN
+<BR>[Called By]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Dwin_ChangeVariableValue_FrameN
+<LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DisplayText
 </UL>
 
 <P><STRONG><a name="[33]"></a>main</STRONG> (Thumb, 94 bytes, Stack size 8 bytes, main.o(i.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 168 + Unknown Stack Size
 <LI>Call Chain = main &rArr; OSInit &rArr; OSTmr_Init &rArr; OSTmr_InitTask &rArr; OSTaskCreateExt &rArr; OS_TCBInit
 </UL>
-<BR>[Calls]<UL><LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSStart
-<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSInit
-<LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART4Init
+<BR>[Calls]<UL><LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART4Init
 <LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART3Init
 <LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART2Init
 <LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART1Init
@@ -2059,13 +2058,16 @@ Global Symbols
 <LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_Init
 <LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemParameterInit
 <LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTaskCreate
+<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSStart
+<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSInit
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> entry9a.o(.ARM.Collect$$$$0000000B)
 </UL>
-<P><STRONG><a name="[93]"></a>malloc</STRONG> (Thumb, 92 bytes, Stack size 20 bytes, malloc.o(i.malloc))
+<P><STRONG><a name="[80]"></a>malloc</STRONG> (Thumb, 92 bytes, Stack size 20 bytes, malloc.o(i.malloc))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = malloc
 </UL>
-<BR>[Called By]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Dwin_ChangeVariableValue_FrameN
+<BR>[Called By]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Dwin_ChangeVariableValue_FrameN
+<LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DisplayText
 </UL>
 
 <P><STRONG><a name="[9]"></a>tickISRHandler</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, os_cpu_c.o(i.tickISRHandler))
@@ -2135,9 +2137,9 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[c4]"></a>OS_SchedNew</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, os_core.o(i.OS_SchedNew))
-<BR><BR>[Called By]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_Sched
+<BR><BR>[Called By]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSIntExit
+<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OS_Sched
 <LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSStart
-<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSIntExit
 </UL>
 
 <P><STRONG><a name="[df]"></a>OSTmr_InitTask</STRONG> (Thumb, 50 bytes, Stack size 32 bytes, os_tmr.o(i.OSTmr_InitTask))
@@ -2160,11 +2162,11 @@ Local Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 32 + Unknown Stack Size
 <LI>Call Chain = OSTmr_Task &rArr; OSSemPend &rArr; OS_Sched
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSSchedUnlock
-<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSSchedLock
-<LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTmr_Unlink
+<BR>[Calls]<UL><LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTmr_Unlink
 <LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTmr_Link
 <LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSSemPend
+<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSSchedUnlock
+<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSSchedLock
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> os_tmr.o(i.OSTmr_InitTask)
 </UL>
@@ -2192,8 +2194,8 @@ Local Symbols
 <BR>[Address Reference Count : 1]<UL><LI> main.o(i.taskStart)
 </UL>
 <P><STRONG><a name="[3b]"></a>taskDisplay</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, main.o(i.taskDisplay))
-<BR><BR>[Stack]<UL><LI>Max Depth = 176 + Unknown Stack Size
-<LI>Call Chain = taskDisplay &rArr; DisplayMain &rArr; DisplayVariableValue &rArr; DisplayText &rArr; OSTimeDlyHMSM &rArr; OSTimeDly &rArr; OS_Sched
+<BR><BR>[Stack]<UL><LI>Max Depth = 136 + Unknown Stack Size
+<LI>Call Chain = taskDisplay &rArr; DisplayMain &rArr; DisplayVariableValue &rArr; Dwin_ChangeVariableValue_FrameN &rArr; OSTimeDlyHMSM &rArr; OSTimeDly &rArr; OS_Sched
 </UL>
 <BR>[Calls]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DisplayMain
 <LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTimeDlyHMSM
@@ -2213,16 +2215,16 @@ Local Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 80 + Unknown Stack Size
 <LI>Call Chain = taskStart &rArr; OSTaskCreate &rArr; OS_TCBInit
 </UL>
-<BR>[Calls]<UL><LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSStatInit
-<LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tick_init
+<BR>[Calls]<UL><LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tick_init
 <LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTaskCreate
 <LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTaskSuspend
+<LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSStatInit
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> main.o(i.main)
 </UL>
 <P><STRONG><a name="[3e]"></a>taskWelink</STRONG> (Thumb, 10 bytes, Stack size 8 bytes, main.o(i.taskWelink))
 <BR><BR>[Stack]<UL><LI>Max Depth = 488 + Unknown Stack Size
-<LI>Call Chain = taskWelink &rArr; WelinkMain &rArr; MsaLogin &rArr; RecvDataHandle &rArr; DownstreamCmdHandle &rArr; cmd_105_proess &rArr; UpstreamCmdHandle &rArr; HardwareSendData &rArr; WriteSocketDataToBuffer &rArr; ReadSocket_2Byte &rArr; EthernetSendByte
+<LI>Call Chain = taskWelink &rArr; WelinkMain &rArr; MsaLogin &rArr; RecvDataHandle &rArr; DownstreamCmdHandle &rArr; cmd_3_proess &rArr; UpstreamCmdHandle &rArr; HardwareSendData &rArr; WriteSocketDataToBuffer &rArr; ReadSocket_2Byte &rArr; EthernetSendByte
 </UL>
 <BR>[Calls]<UL><LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WelinkMain
 </UL>
@@ -2443,53 +2445,55 @@ Local Symbols
 <BR>[Called By]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMSMain
 </UL>
 
-<P><STRONG><a name="[7f]"></a>DisplayText</STRONG> (Thumb, 98 bytes, Stack size 72 bytes, display.o(i.DisplayText))
-<BR><BR>[Stack]<UL><LI>Max Depth = 120 + Unknown Stack Size
+<P><STRONG><a name="[7f]"></a>DisplayText</STRONG> (Thumb, 98 bytes, Stack size 24 bytes, display.o(i.DisplayText))
+<BR><BR>[Stack]<UL><LI>Max Depth = 72 + Unknown Stack Size
 <LI>Call Chain = DisplayText &rArr; OSTimeDlyHMSM &rArr; OSTimeDly &rArr; OS_Sched
 </UL>
 <BR>[Calls]<UL><LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTimeDlyHMSM
-<LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART1SendStr
-<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART1SendStr
+<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;malloc
+<LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;free
+<LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 </UL>
 <BR>[Called By]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DisplayVariableValue
 </UL>
 
-<P><STRONG><a name="[7e]"></a>DisplayVariableValue</STRONG> (Thumb, 646 bytes, Stack size 48 bytes, display.o(i.DisplayVariableValue))
-<BR><BR>[Stack]<UL><LI>Max Depth = 168 + Unknown Stack Size
-<LI>Call Chain = DisplayVariableValue &rArr; DisplayText &rArr; OSTimeDlyHMSM &rArr; OSTimeDly &rArr; OS_Sched
+<P><STRONG><a name="[7e]"></a>DisplayVariableValue</STRONG> (Thumb, 658 bytes, Stack size 48 bytes, display.o(i.DisplayVariableValue))
+<BR><BR>[Stack]<UL><LI>Max Depth = 128 + Unknown Stack Size
+<LI>Call Chain = DisplayVariableValue &rArr; Dwin_ChangeVariableValue_FrameN &rArr; OSTimeDlyHMSM &rArr; OSTimeDly &rArr; OS_Sched
 </UL>
-<BR>[Calls]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HexToAscStr
-<LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Dwin_ChangeVariableValue_FrameN
-<LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Dwin_ChangeVariableValue_Frame1
+<BR>[Calls]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HexToAscStr
+<LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Dwin_ChangeVariableValue_FrameN
+<LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Dwin_ChangeVariableValue_Frame1
 <LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DisplayText
 </UL>
 <BR>[Called By]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DisplayMain
 </UL>
 
-<P><STRONG><a name="[82]"></a>Dwin_ChangeVariableValue_Frame1</STRONG> (Thumb, 102 bytes, Stack size 24 bytes, display.o(i.Dwin_ChangeVariableValue_Frame1))
+<P><STRONG><a name="[84]"></a>Dwin_ChangeVariableValue_Frame1</STRONG> (Thumb, 102 bytes, Stack size 24 bytes, display.o(i.Dwin_ChangeVariableValue_Frame1))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72 + Unknown Stack Size
 <LI>Call Chain = Dwin_ChangeVariableValue_Frame1 &rArr; OSTimeDlyHMSM &rArr; OSTimeDly &rArr; OS_Sched
 </UL>
 <BR>[Calls]<UL><LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTimeDlyHMSM
-<LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART1SendStr
+<LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART1SendStr
 </UL>
 <BR>[Called By]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DisplayVariableValue
 </UL>
 
-<P><STRONG><a name="[84]"></a>Dwin_ChangeVariableValue_FrameN</STRONG> (Thumb, 114 bytes, Stack size 32 bytes, display.o(i.Dwin_ChangeVariableValue_FrameN))
+<P><STRONG><a name="[86]"></a>Dwin_ChangeVariableValue_FrameN</STRONG> (Thumb, 114 bytes, Stack size 32 bytes, display.o(i.Dwin_ChangeVariableValue_FrameN))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80 + Unknown Stack Size
 <LI>Call Chain = Dwin_ChangeVariableValue_FrameN &rArr; OSTimeDlyHMSM &rArr; OSTimeDly &rArr; OS_Sched
 </UL>
 <BR>[Calls]<UL><LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTimeDlyHMSM
-<LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART1SendStr
-<LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;malloc
-<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;free
-<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART1SendStr
+<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;malloc
+<LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;free
+<LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 </UL>
 <BR>[Called By]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DisplayVariableValue
 </UL>
 
-<P><STRONG><a name="[7d]"></a>ReadDataProcess</STRONG> (Thumb, 1110 bytes, Stack size 8 bytes, display.o(i.ReadDataProcess))
+<P><STRONG><a name="[7d]"></a>ReadDataProcess</STRONG> (Thumb, 1130 bytes, Stack size 8 bytes, display.o(i.ReadDataProcess))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48 + Unknown Stack Size
 <LI>Call Chain = ReadDataProcess &rArr; FramWrite &rArr; FramState &rArr; Fdelay
 </UL>
@@ -2499,7 +2503,7 @@ Local Symbols
 <LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ASCII_To_HEX
 <LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FramWrite
 <LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
-<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 </UL>
 <BR>[Called By]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DisplayMain
 </UL>
