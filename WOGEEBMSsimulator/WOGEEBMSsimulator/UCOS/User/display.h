@@ -109,7 +109,7 @@ typedef struct _DwinMsg
   	uint8_t Order;
     uint16_t Addr;
 	  uint8_t Datalen;
-	  uint8_t Data[50];
+	  uint8_t Data[30];
   	uint8_t Value;
 	
 }DwinMsg;

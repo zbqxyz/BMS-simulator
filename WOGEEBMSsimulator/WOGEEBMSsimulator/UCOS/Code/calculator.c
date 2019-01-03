@@ -165,8 +165,6 @@ uint32_t ASCII_To_HEX_Password(uint8_t type,uint8_t *data,uint8_t len,uint8_t *d
 {
 	uint8_t i,cnt=0;
 	uint32_t tradata=0;
-	if(type==0)
-	{
 		if(len>8)
 			return tradata;
 		for(i=0;i<len;i++)
@@ -186,11 +184,11 @@ uint32_t ASCII_To_HEX_Password(uint8_t type,uint8_t *data,uint8_t len,uint8_t *d
 		}
 		if(cnt>1) 
 			return 0;
-	}
-	else 
+
 	return tradata;
 	
 }
+
 
 
 /***********************************************************************************************
@@ -360,14 +358,17 @@ uint16_t GetCRC16(uint8_t *pBuf, uint32_t size, uint16_t crc16)
 } 
 
 /*********************************************************************************************************
-ACS数据帧转换成HEX数组(限BCD数字码)
+ACS数据帧转换成HEX数组(限0-f数字码)
 *********************************************************************************************************/
 void AscToHexStr(uint8_t *ASCbuf,uint8_t *HEXbuf,uint8_t len)
 {
 	unsigned int i;
 	
 	for(i=0;i<len/2;i++)	{
-	  	*(HEXbuf+i) = ((*(ASCbuf+2*i)-'0')<<4) + (*(ASCbuf+2*i+1)-'0');
+		if(*(ASCbuf+2*i)>='a')
+	  	*(HEXbuf+i) = ((*(ASCbuf+2*i)-'a'+10)<<4) + (*(ASCbuf+2*i+1)-'a'+10);   //a-f
+		else
+	  	*(HEXbuf+i) = ((*(ASCbuf+2*i)-'0')<<4) + (*(ASCbuf+2*i+1)-'0');         //0-9
 	}
 }
 

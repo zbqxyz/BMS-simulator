@@ -218,8 +218,8 @@ static void ReadDataProcess(void)
 						   AscToHexStr(RDwinMessage.Data,Sys_PARA.MeterNO,12);			
 						break;							
 					
-					case DW_ADDR_VIN_INPUT:                                                    //车辆识别码			
-              AscToHexStr(RDwinMessage.Data,BMSMessage.VIN,34);										
+					case DW_ADDR_VIN_INPUT:                                                    //车辆识别码										
+              memcpy(BMSMessage.VIN,RDwinMessage.Data,17);					                 //ASCII码直接拷贝
 						break;										
 				
           default:
@@ -307,8 +307,7 @@ static void DisplayVariableValue(void)
 	// 第6页面信息显示	
    Dwin_ChangeVariableValue_Frame1(DW_ADDR_ChargeLimitedTime_DISPLAY,Sys_PARA.ChargeLimitedTime);	
 	 Dwin_ChangeVariableValue_Frame1(DW_ADDR_SOCIncreaseTime_DISPLAY,Sys_PARA.SOCIncreaseTime);	
-   HexToAscStr(BMSMessage.VIN,ascbuf,9);	 
-	 Dwin_ChangeVariableValue_FrameN(DW_ADDR_VIN_DISPLAY,ascbuf,17);		
+	 Dwin_ChangeVariableValue_FrameN(DW_ADDR_VIN_DISPLAY,BMSMessage.VIN,17);	             //发送数据为	ASCII码
 	
 	// 显示文本文档
 	if(!DI2_INT_Status())                                                                  //辅源状态 

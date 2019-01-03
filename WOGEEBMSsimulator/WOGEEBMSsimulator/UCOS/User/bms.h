@@ -34,7 +34,7 @@ typedef struct _MessageBMS
 	  uint8_t   MINSingleVoltageTemp;	// 最低允许单体温度
 	  uint8_t   SingleVoltageTemp;    // 单体温度
     uint8_t   BMSStopFlag;          // 停机标志
-		uint8_t   VIN[9];		          // 车辆识别码
+		uint8_t   VIN[17];		          // 车辆识别码 ASCII码
 	  uint8_t   CS;                   // 校验位
 	
 }BMSMsg;
