@@ -344,7 +344,7 @@ void CAN_IRQHandler (void)
 
        if(j==0)
        {					 
-						CANRCV(j, pwMsgCAN0);                                          /* 收到CAN0中断,接收帧 放进缓冲区等待任务取出去处理             */         			 
+						CANRCV(j, pwMsgCAN0);                                          /* 收到CAN0中断,接收帧 放进缓冲区等待任务取出去处理               */         			 
 	          if(pwMsgCAN0 == &MsgCAN0BUF[CAN_MSG_NUMBER-2])                
 					  { 
                  pwMsgCAN0 = MsgCAN0BUF;							                     /* 调整指针指向                                                   */

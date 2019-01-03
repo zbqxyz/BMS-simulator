@@ -27,104 +27,14 @@ Project File Date:  12/05/2018
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 4 (build 422)', folder: 'D:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'APP'
-compiling os_cpu_c.c...
-compiling os_sem.c...
-compiling os_dbg_r.c...
-compiling os_mem.c...
-compiling os_time.c...
-compiling os_mbox.c...
-compiling os_tmr.c...
-compiling os_q.c...
-compiling os_mutex.c...
-compiling os_flag.c...
-compiling os_core.c...
-compiling fram.c...
-compiling meter.c...
-User\meter.c(95): warning:  #550-D: variable "mark"  was set but never used
-  		  uint8_t mark;	
-User\meter.c: 1 warning, 0 errors
-compiling main.c...
-compiling card.c...
-User\card.c(596): warning:  #188-D: enumerated type mixed with another type
-      return 0;
-User\card.c(715): warning:  #188-D: enumerated type mixed with another type
-      return 0;
-User\card.c(737): warning:  #177-D: variable "ptim"  was declared but never referenced
-      DATETime ptim;
-User\card.c(738): warning:  #177-D: variable "pinCode"  was declared but never referenced
-      uint8_t pinCode[3] = {0x12, 0x34, 0x56};                      //用户密匙
-User\card.c(739): warning:  #177-D: variable "tmp"  was declared but never referenced
-      uint8_t tmp;
-User\card.c: 5 warnings, 0 errors
-compiling display.c...
-User\display.c(63): warning:  #177-D: variable "ascbuf"  was declared but never referenced
-  	  uint8_t ascbuf[34];
-User\display.c(239): warning:  #177-D: function "DisplayPage"  was declared but never referenced
-  static void DisplayPage(void)
-User\display.c(412): warning:  #177-D: function "Dwin_ChangeVariableValue_Frame2"  was declared but never referenced
-  static void Dwin_ChangeVariableValue_Frame2(unsigned short addr,uint32_t dat)
-User\display.c: 3 warnings, 0 errors
-compiling norflash.c...
-User\norflash.c(219): warning:  #177-D: variable "i2"  was declared but never referenced
-      uint8_t i2,i1,i0;
-User\norflash.c(219): warning:  #177-D: variable "i1"  was declared but never referenced
-      uint8_t i2,i1,i0;
-User\norflash.c(219): warning:  #177-D: variable "i0"  was declared but never referenced
-      uint8_t i2,i1,i0;
-User\norflash.c(220): warning:  #177-D: variable "k"  was declared but never referenced
-      uint16_t k,i;
-User\norflash.c(220): warning:  #177-D: variable "i"  was declared but never referenced
-      uint16_t k,i;
-User\norflash.c(292): warning:  #177-D: variable "err"  was declared but never referenced
-      uint8_t	err;
-User\norflash.c(293): warning:  #177-D: variable "temp"  was declared but never referenced
-      INT32U temp = 0,i = 0,StatRgVal = 0;
-User\norflash.c(293): warning:  #177-D: variable "i"  was declared but never referenced
-      INT32U temp = 0,i = 0,StatRgVal = 0;
-User\norflash.c(293): warning:  #177-D: variable "StatRgVal"  was declared but never referenced
-      INT32U temp = 0,i = 0,StatRgVal = 0;
-User\norflash.c(313): warning:  #1-D: last line of file ends without a newline
-  	
-User\norflash.c: 10 warnings, 0 errors
-compiling os_task.c...
-compiling bms.c...
-User\bms.c(569): warning:  #187-D: use of "=" where "==" may have been intended
-  						if(((MessageCAN0.DATAA&0xff)==0x11)&&((MessageCAN0.DATAB&0xff0000)==0x020000)&&(BMSMessage.ChargeStage= 1))
-User\bms.c(582): warning:  #187-D: use of "=" where "==" may have been intended
-  						if(((MessageCAN0.DATAA&0xff)==0x11)&&((MessageCAN0.DATAB&0xff0000)==0x060000)&&(BMSMessage.ChargeStage= 2))
-User\bms.c(589): warning:  #187-D: use of "=" where "==" may have been intended
-  						if(((MessageCAN0.DATAA&0xff)==0x11)&&((MessageCAN0.DATAB&0xff0000)==0x110000)&&(BMSMessage.ChargeStage= 3))
-User\bms.c(417): warning:  #177-D: function "BMS_BMV"  was declared but never referenced
-  void BMS_BMV(void)		//可选报文
-User\bms.c(422): warning:  #177-D: function "BMS_BMT"  was declared but never referenced
-  void BMS_BMT(void)		//可选报文
-User\bms.c: 5 warnings, 0 errors
-compiling welink.c...
-User\welink.c(200): warning:  #177-D: variable "i"  was declared but never referenced
-  	uint8_t  i,sn,cmd,cs;
-User\welink.c(200): warning:  #550-D: variable "sn"  was set but never used
-  	uint8_t  i,sn,cmd,cs;
-User\welink.c(200): warning:  #177-D: variable "cs"  was declared but never referenced
-  	uint8_t  i,sn,cmd,cs;
-User\welink.c: 3 warnings, 0 errors
-compiling ethernet.c...
-compiling link .c...
-User\link .c(784): warning:  #550-D: variable "pdat"  was set but never used
-     	uint8_t *pdat;
-User\link .c: 1 warning, 0 errors
-compiling gpio.c...
-compiling print.c...
-Code\print.c(140): warning:  #177-D: variable "icnt"  was declared but never referenced
-       int icnt = 0;
-Code\print.c: 1 warning, 0 errors
-compiling uart.c...
-compiling can.c...
-compiling rtc.c...
-compiling timer.c...
+compiling calculator.c...
+Code\calculator.c(193): warning:  #940-D: missing return statement at end of non-void function "ASCII_To_HEX_Password" 
+  }
+Code\calculator.c: 1 warning, 0 errors
 linking...
-Program Size: Code=26928 RO-data=644 RW-data=492 ZI-data=28252  
+Program Size: Code=26948 RO-data=644 RW-data=492 ZI-data=28252  
 FromELF: creating hex file...
-".\Flash\Demo.axf" - 0 Error(s), 29 Warning(s).
+".\Flash\Demo.axf" - 0 Error(s), 1 Warning(s).
 
 <h2>Software Packages used:</h2>
 

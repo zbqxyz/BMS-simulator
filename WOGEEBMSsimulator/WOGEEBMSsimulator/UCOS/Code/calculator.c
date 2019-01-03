@@ -372,13 +372,33 @@ void AscToHexStr(uint8_t *ASCbuf,uint8_t *HEXbuf,uint8_t len)
 }
 
 /*********************************************************************************************************
-HEX数组转换成ACS数据帧(限BCD数字码)
+HEX数组转换成ACS数据帧
 *********************************************************************************************************/
 void HexToAscStr(uint8_t *HEXbuf,uint8_t *ASCbuf,uint8_t len)
 {
 	unsigned int i;
+#if 0   //限BCD数字码
 		for(i=0;i<len*2;i+=2)	{	  
 			*(ASCbuf+i)   = (*(HEXbuf+i/2)>>4) + '0';
 			*(ASCbuf+i+1) = (*(HEXbuf+i/2)%16)  + '0';			
 	}	
+#else   //限BCD数字码和字母
+	unsigned char tmp;
+	for(i=0;i<len;i++)
+	{
+		tmp = *(HEXbuf+i)>>4;
+		if(tmp>=10)
+			*(ASCbuf+i*2) = tmp-10+'a';      //字母
+		else
+			*(ASCbuf+i*2) = tmp+'0';         //数字
+		
+		tmp = *(HEXbuf+i)&0x0f;          
+		if(tmp>=10) 
+			*(ASCbuf+i*2+1) = tmp-10+'a';    //字母
+		else 
+			*(ASCbuf+i*2+1) = tmp+'0';       //数字
+	}
+#endif
+		
+	
 }
