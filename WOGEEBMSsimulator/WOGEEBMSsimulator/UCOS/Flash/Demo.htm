@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Flash\Demo.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Flash\Demo.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060422: Last Updated: Thu Jan 03 15:53:38 2019
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060422: Last Updated: Fri Jan 04 18:15:42 2019
 <BR><P>
 <H3>Maximum Stack Usage =        488 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -533,7 +533,7 @@ Global Symbols
 
 <P><STRONG><a name="[50]"></a>BMSMain</STRONG> (Thumb, 480 bytes, Stack size 8 bytes, bms.o(i.BMSMain))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80 + Unknown Stack Size
-<LI>Call Chain = BMSMain &rArr; Charger_RECData_Pro &rArr; CST_Analyse &rArr; BMS_BSD &rArr; OSTimeDlyHMSM &rArr; OSTimeDly &rArr; OS_Sched
+<LI>Call Chain = BMSMain &rArr; Charger_RECData_Pro &rArr; CRO_Analyse &rArr; BMS_BRO &rArr; OSTimeDlyHMSM &rArr; OSTimeDly &rArr; OS_Sched
 </UL>
 <BR>[Calls]<UL><LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BCS
 <LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BCL
@@ -592,8 +592,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[6f]"></a>CEM_Analyse</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, bms.o(i.CEM_Analyse))
-<BR><BR>[Stack]<UL><LI>Max Depth = 64 + Unknown Stack Size
-<LI>Call Chain = CEM_Analyse &rArr; BMS_BEM &rArr; OSTimeDlyHMSM &rArr; OSTimeDly &rArr; OS_Sched
+<BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = CEM_Analyse &rArr; BMS_BEM &rArr; WriteCAN0 &rArr; CANSend
 </UL>
 <BR>[Calls]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BEM
 </UL>
@@ -642,8 +641,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[74]"></a>CSD_Analyse</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, bms.o(i.CSD_Analyse))
-<BR><BR>[Stack]<UL><LI>Max Depth = 64 + Unknown Stack Size
-<LI>Call Chain = CSD_Analyse &rArr; BMS_BSD &rArr; OSTimeDlyHMSM &rArr; OSTimeDly &rArr; OS_Sched
+<BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = CSD_Analyse &rArr; BMS_BSD &rArr; WriteCAN0 &rArr; CANSend
 </UL>
 <BR>[Calls]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BSD
 <LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BEM
@@ -652,8 +650,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[75]"></a>CST_Analyse</STRONG> (Thumb, 84 bytes, Stack size 8 bytes, bms.o(i.CST_Analyse))
-<BR><BR>[Stack]<UL><LI>Max Depth = 64 + Unknown Stack Size
-<LI>Call Chain = CST_Analyse &rArr; BMS_BSD &rArr; OSTimeDlyHMSM &rArr; OSTimeDly &rArr; OS_Sched
+<BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = CST_Analyse &rArr; BMS_BST &rArr; WriteCAN0 &rArr; CANSend
 </UL>
 <BR>[Calls]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BST
 <LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BSD
@@ -1125,7 +1122,6 @@ Global Symbols
 <LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Dwin_ChangeVariableValue_FrameN
 <LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Dwin_ChangeVariableValue_Frame1
 <LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DisplayText
-<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BSD
 <LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BRO
 <LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BRM_Msg06
 <LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BRM_Msg05
@@ -1133,7 +1129,6 @@ Global Symbols
 <LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BRM_Msg03
 <LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BRM_Msg02
 <LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BRM_Msg01
-<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BEM
 <LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_BCS_Data_01
 <LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SendDataHandle
 </UL>
@@ -2186,7 +2181,7 @@ Local Symbols
 
 <P><STRONG><a name="[3d]"></a>taskBMS</STRONG> (Thumb, 42 bytes, Stack size 0 bytes, main.o(i.taskBMS))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80 + Unknown Stack Size
-<LI>Call Chain = taskBMS &rArr; BMSMain &rArr; Charger_RECData_Pro &rArr; CST_Analyse &rArr; BMS_BSD &rArr; OSTimeDlyHMSM &rArr; OSTimeDly &rArr; OS_Sched
+<LI>Call Chain = taskBMS &rArr; BMSMain &rArr; Charger_RECData_Pro &rArr; CRO_Analyse &rArr; BMS_BRO &rArr; OSTimeDlyHMSM &rArr; OSTimeDly &rArr; OS_Sched
 </UL>
 <BR>[Calls]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMSMain
 <LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTimeDlyHMSM
@@ -2247,7 +2242,7 @@ Local Symbols
 <BR>[Called By]<UL><LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CRM_Analyse
 </UL>
 
-<P><STRONG><a name="[58]"></a>BMS_BCP_DATA_01</STRONG> (Thumb, 72 bytes, Stack size 8 bytes, bms.o(i.BMS_BCP_DATA_01))
+<P><STRONG><a name="[58]"></a>BMS_BCP_DATA_01</STRONG> (Thumb, 70 bytes, Stack size 8 bytes, bms.o(i.BMS_BCP_DATA_01))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56 + Unknown Stack Size
 <LI>Call Chain = BMS_BCP_DATA_01 &rArr; OSTimeDlyHMSM &rArr; OSTimeDly &rArr; OS_Sched
 </UL>
@@ -2274,7 +2269,7 @@ Local Symbols
 <LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CRO_Analyse
 </UL>
 
-<P><STRONG><a name="[5b]"></a>BMS_BCS_Data_01</STRONG> (Thumb, 152 bytes, Stack size 8 bytes, bms.o(i.BMS_BCS_Data_01))
+<P><STRONG><a name="[5b]"></a>BMS_BCS_Data_01</STRONG> (Thumb, 174 bytes, Stack size 8 bytes, bms.o(i.BMS_BCS_Data_01))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56 + Unknown Stack Size
 <LI>Call Chain = BMS_BCS_Data_01 &rArr; OSTimeDlyHMSM &rArr; OSTimeDly &rArr; OS_Sched
 </UL>
@@ -2284,7 +2279,7 @@ Local Symbols
 <BR>[Called By]<UL><LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_DATA_Packet_Analyse
 </UL>
 
-<P><STRONG><a name="[5c]"></a>BMS_BCS_Data_02</STRONG> (Thumb, 50 bytes, Stack size 8 bytes, bms.o(i.BMS_BCS_Data_02))
+<P><STRONG><a name="[5c]"></a>BMS_BCS_Data_02</STRONG> (Thumb, 70 bytes, Stack size 8 bytes, bms.o(i.BMS_BCS_Data_02))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = BMS_BCS_Data_02 &rArr; WriteCAN0 &rArr; CANSend
 </UL>
 <BR>[Calls]<UL><LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteCAN0
@@ -2292,18 +2287,16 @@ Local Symbols
 <BR>[Called By]<UL><LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BMS_DATA_Packet_Analyse
 </UL>
 
-<P><STRONG><a name="[5d]"></a>BMS_BEM</STRONG> (Thumb, 48 bytes, Stack size 8 bytes, bms.o(i.BMS_BEM))
-<BR><BR>[Stack]<UL><LI>Max Depth = 56 + Unknown Stack Size
-<LI>Call Chain = BMS_BEM &rArr; OSTimeDlyHMSM &rArr; OSTimeDly &rArr; OS_Sched
+<P><STRONG><a name="[5d]"></a>BMS_BEM</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, bms.o(i.BMS_BEM))
+<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = BMS_BEM &rArr; WriteCAN0 &rArr; CANSend
 </UL>
-<BR>[Calls]<UL><LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTimeDlyHMSM
-<LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteCAN0
+<BR>[Calls]<UL><LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteCAN0
 </UL>
 <BR>[Called By]<UL><LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CSD_Analyse
 <LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CEM_Analyse
 </UL>
 
-<P><STRONG><a name="[5e]"></a>BMS_BHM</STRONG> (Thumb, 34 bytes, Stack size 8 bytes, bms.o(i.BMS_BHM))
+<P><STRONG><a name="[5e]"></a>BMS_BHM</STRONG> (Thumb, 56 bytes, Stack size 8 bytes, bms.o(i.BMS_BHM))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = BMS_BHM &rArr; WriteCAN0 &rArr; CANSend
 </UL>
 <BR>[Calls]<UL><LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteCAN0
@@ -2319,7 +2312,7 @@ Local Symbols
 <BR>[Called By]<UL><LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CRM_Analyse
 </UL>
 
-<P><STRONG><a name="[60]"></a>BMS_BRM_Msg01</STRONG> (Thumb, 98 bytes, Stack size 8 bytes, bms.o(i.BMS_BRM_Msg01))
+<P><STRONG><a name="[60]"></a>BMS_BRM_Msg01</STRONG> (Thumb, 72 bytes, Stack size 8 bytes, bms.o(i.BMS_BRM_Msg01))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56 + Unknown Stack Size
 <LI>Call Chain = BMS_BRM_Msg01 &rArr; OSTimeDlyHMSM &rArr; OSTimeDly &rArr; OS_Sched
 </UL>
@@ -2399,12 +2392,10 @@ Local Symbols
 <LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CML_Analyse
 </UL>
 
-<P><STRONG><a name="[69]"></a>BMS_BSD</STRONG> (Thumb, 66 bytes, Stack size 8 bytes, bms.o(i.BMS_BSD))
-<BR><BR>[Stack]<UL><LI>Max Depth = 56 + Unknown Stack Size
-<LI>Call Chain = BMS_BSD &rArr; OSTimeDlyHMSM &rArr; OSTimeDly &rArr; OS_Sched
+<P><STRONG><a name="[69]"></a>BMS_BSD</STRONG> (Thumb, 54 bytes, Stack size 8 bytes, bms.o(i.BMS_BSD))
+<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = BMS_BSD &rArr; WriteCAN0 &rArr; CANSend
 </UL>
-<BR>[Calls]<UL><LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OSTimeDlyHMSM
-<LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteCAN0
+<BR>[Calls]<UL><LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteCAN0
 </UL>
 <BR>[Called By]<UL><LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CST_Analyse
 <LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CSD_Analyse
@@ -2429,7 +2420,7 @@ Local Symbols
 
 <P><STRONG><a name="[51]"></a>Charger_RECData_Pro</STRONG> (Thumb, 242 bytes, Stack size 8 bytes, bms.o(i.Charger_RECData_Pro))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72 + Unknown Stack Size
-<LI>Call Chain = Charger_RECData_Pro &rArr; CST_Analyse &rArr; BMS_BSD &rArr; OSTimeDlyHMSM &rArr; OSTimeDly &rArr; OS_Sched
+<LI>Call Chain = Charger_RECData_Pro &rArr; CRO_Analyse &rArr; BMS_BRO &rArr; OSTimeDlyHMSM &rArr; OSTimeDly &rArr; OS_Sched
 </UL>
 <BR>[Calls]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CTS_Analyse
 <LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CST_Analyse
@@ -2493,7 +2484,7 @@ Local Symbols
 <BR>[Called By]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DisplayVariableValue
 </UL>
 
-<P><STRONG><a name="[7d]"></a>ReadDataProcess</STRONG> (Thumb, 1130 bytes, Stack size 8 bytes, display.o(i.ReadDataProcess))
+<P><STRONG><a name="[7d]"></a>ReadDataProcess</STRONG> (Thumb, 1162 bytes, Stack size 8 bytes, display.o(i.ReadDataProcess))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48 + Unknown Stack Size
 <LI>Call Chain = ReadDataProcess &rArr; FramWrite &rArr; FramState &rArr; Fdelay
 </UL>

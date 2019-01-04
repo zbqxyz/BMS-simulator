@@ -54,32 +54,32 @@ void BMSParameterInit(void)
 
 void BMSMain (void)
 {   
-  
-		
+  		
 		Charger_RECData_Pro();                                     // ´¦Àí³äµç×®¹ýÀ´µÄÊý¾Ý   
+
 	
 /*          ³äµç½×¶Î´¦Àíº¯Êý                 */
 	switch (BMSMessage.ChargeStage)
 	{
  		
 		case 1:	 	
-		 	  if((BMSMessage.BMSStopFlag==1)&&(SysTickCnt%10==0))    //Í£»úÊ± 10ms·¢ËÍÒ»´Î
+		 	  if((BMSMessage.BMSStopFlag==1)&&(CAN0TickCnt%10==0))    //Í£»úÊ± 10ms·¢ËÍÒ»´Î
 			   BMS_BST(); 
 	       break; 
 				
 				
 	  case 2:			
-	 		 	 if((BMSMessage.BMSStopFlag==1)&&(SysTickCnt%10==0))    //Í£»úÊ± 10ms·¢ËÍÒ»´Î
+	 		 	 if((BMSMessage.BMSStopFlag==1)&&(CAN0TickCnt%10==0))    //Í£»úÊ± 10ms·¢ËÍÒ»´Î
 			   BMS_BST(); 
 					break;
 	 
-		case 3:	 						    
-	     	if (SysTickCnt%250==0)            //µç³Ø³äµç×Ü×´Ì¬£¬250ms·¢ËÍÒ»´Î  
+		case 3:	 		        			
+	     	if (CAN0TickCnt%250==0)            //µç³Ø³äµç×Ü×´Ì¬£¬250ms·¢ËÍÒ»´Î  
 		    {
 					BMS_BCS();
-					BMS_BSM();
+					BMS_BSM();                          //todu
 		    }
-				else if (SysTickCnt%50==0)       //³äµçÐèÇó50ms·¢ËÍÒ»´Î
+				else if (CAN0TickCnt%50==0)       //³äµçÐèÇó50ms·¢ËÍÒ»´Î
 		    {
 					BMS_BCL();	                     
 		     }
@@ -122,13 +122,13 @@ void BMSMain (void)
           break;							
 
 		case 4: 
-		     if((BMSMessage.BMSStopFlag==1)&&(SysTickCnt%10==0))    //Í£»úÊ± 10ms·¢ËÍÒ»´Î
+		     if((BMSMessage.BMSStopFlag==1)&&(CAN0TickCnt%10==0))    //Í£»úÊ± 10ms·¢ËÍÒ»´Î
 			   BMS_BST(); 
 				 DC_SWITCH_OFF();
 	       break;
 				 
 		default:
-			  SysTickCnt= 0 ;
+			  CAN0TickCnt= 0 ;
 	    	BMSMessage.ChargeStage=0;
          break;	 
 	 }		
@@ -138,8 +138,8 @@ void BMSMain (void)
 void BMS_BHM(void)    		           //    ÎÕÊÖ    ÊÕµ½BMS ¶¯Êý¾Ý´«ÊäÐ­ÒéTCPM£¨ÓÉÓÚÊý¾Ý³¤¶È´óÓÚ8£¬¹²41£©´«Êäµç³Ø×éÉí·Ý±àÂëÐÅÏ¢BRM
 {
    CANID=0x182756F4 ;
-	 CAN_Data[0]=0x4c ;                //±æÊ¶
-	 CAN_Data[1]=0x1d ;                //µÚ2¸ö×Ö½Ú ³äµç»ú±àºÅ 00--100   ;               //³äµç»ú±àºÅ£º1~100
+	 CAN_Data[0]=(BMSMessage.MAXVoltage*10)&0xff ;                //±æÊ¶
+	 CAN_Data[1]=(BMSMessage.MAXVoltage*10)>>4 ;                //µÚ2¸ö×Ö½Ú ³äµç»ú±àºÅ 00--100   ;               //³äµç»ú±àºÅ£º1~100
 	 WriteCAN0(2,1, CANID,CAN_Data);	 
 }	
 
@@ -166,10 +166,7 @@ void BMS_BRM_Msg01(void)
 	 CAN_Data[1]=0x00 ;               //µÚ2¸ö×Ö½Ú ³äµç»ú±àºÅ 00--100   ;               //³äµç»ú±àºÅ£º1~100
 	 CAN_Data[2]=0x01 ;               //³äµç»ú³äµçÕ¾ËùÔÚÇøÓò±àÂë£¨±ê×¼ASCII£©
 	 CAN_Data[3]=0x00 ;
-	if(0<<BMSMessage.BatteryType<<9)
 	 CAN_Data[4]=BMSMessage.BatteryType;               //µç³ØÀàÐÍ
-	else
-	 CAN_Data[4]=BMSMessage.BatteryType;               //ÆäËûµç³Ø
 	 CAN_Data[5]=0xf0 ;
 	 CAN_Data[6]=0x0a ;
 	 CAN_Data[7]=0x70 ;
@@ -294,7 +291,7 @@ void BMS_BCP_DATA_01(void)		// µç³Ø²ÎÊý ¶¯Á¦Ðîµç³Ø³äµç²ÎÊý±¨ÎÄ  01 77 01 e8 03 2
 	 CAN_Data[6]=0x02 ;
 	 CAN_Data[7]=0x4c ;		
 	 WriteCAN0(8,1, CANID,CAN_Data);
-	OSTimeDlyHMSM(0, 0, 0, 500);           //¹ÒÆð100ms£¬ÒÔ±ãÆäËûÏß³ÌÔËÐÐ
+	OSTimeDlyHMSM(0, 0, 0, 5);           //¹ÒÆð100ms£¬ÒÔ±ãÆäËûÏß³ÌÔËÐÐ
 
 }
 
@@ -379,25 +376,25 @@ void BMS_BCS_Data_01(void)
 	 CAN_Data[2]=(ChargerMsg.ChargeVoltage*10>>8)&0xff;
 	 CAN_Data[3]=(4000-ChargerMsg.ChargeCurrent*10)%256 ;
 	 CAN_Data[4]=((4000-ChargerMsg.ChargeCurrent*10)>>8)&0xff ;
-	 CAN_Data[5]=0x49 ;
-	 CAN_Data[6]=0x11 ;	
+	 CAN_Data[5]=(BMSMessage.SingleVoltage&0xf00)>>8;
+	 CAN_Data[6]=BMSMessage.SingleVoltage%256;	
 	 CAN_Data[7]=BMSMessage.SOC;	 			
 	 WriteCAN0(8,1, CANID,CAN_Data);
-	OSTimeDlyHMSM(0, 0, 0, 250);           //¹ÒÆð100ms£¬ÒÔ±ãÆäËûÏß³ÌÔËÐÐ
+	OSTimeDlyHMSM(0, 0, 0, 5);        
 }
 
 void BMS_BCS_Data_02(void)		
 {
 	 CANID=0x1ceb56f4  ;
-	 CAN_Data[0]=0x02 ;
-	 CAN_Data[1]=0x3c ;
+	 CAN_Data[0]=Sys_PARA.ChargeLimitedTime%256 ;
+	 CAN_Data[1]=(Sys_PARA.ChargeLimitedTime>>8)&0xff ;
 	 CAN_Data[2]=0x00 ;
 	 CAN_Data[3]=0xff ;
 	 CAN_Data[4]=0xff ;
 	 CAN_Data[5]=0xff ;
 	 CAN_Data[6]=0xff ;
 	 CAN_Data[7]=0xff ; 			
-	 WriteCAN0(8,1, CANID,CAN_Data);
+	 WriteCAN0(8,1, CANID,CAN_Data);       
 }
 
 void BMS_BSM(void)		
@@ -446,7 +443,7 @@ void BMS_BSD(void)
 	 CAN_Data[5]=0x3d ;
 	 CAN_Data[6]=0x3e ;
 	 WriteCAN0(8,1, CANID,CAN_Data);
-	 OSTimeDlyHMSM(0, 0, 0, 250);           //¹ÒÆð100ms£¬ÒÔ±ãÆäËûÏß³ÌÔËÐ
+
 }
 
 
@@ -458,7 +455,7 @@ void BMS_BEM(void)
 	 CAN_Data[2]=0x00 ;
 	 CAN_Data[3]=0x00 ;
 	 WriteCAN0(4,1, CANID,CAN_Data);
-	 OSTimeDlyHMSM(0, 0, 0, 250);                 //¹ÒÆð100ms£¬ÒÔ±ãÆäËûÏß³ÌÔËÐ
+
 }	
 	
 void CHM_Analyse(void)	

@@ -68,7 +68,7 @@ typedef struct
 extern  SYS_PARA   Sys_PARA;
 
 //extern volatile unsigned long BCLCnt;
-extern volatile unsigned long SysTickCnt;
+extern volatile unsigned long CAN0TickCnt;
 
 
 #ifdef __cplusplus

@@ -251,7 +251,7 @@ unsigned char CANSend(unsigned char Ch, unsigned char BUFNum)
 **				                      *data:  发送数据所在的数组 
 **                             	FF:
 **							              	ID:
-** output paraments:	        	无	
+** output paraments:	        	无			
 ** Returned values:	   		    	0：     失败
 **								              1:      成功
 *********************************************************************************************************/
