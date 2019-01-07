@@ -40,48 +40,56 @@ static void BMS_BEM(void);
 static void Charger_RECData_Pro(void);
 
 void BMSParameterInit(void)
-{
-	
+{	
 		BMSMessage.RequestCurrent = 500;
 		BMSMessage.RequestCurrent = 80 ;
 		BMSMessage.BatteryVoltage = 320;
 		BMSMessage.SOC            = 50;
 		
 		BMSMessage.CS = CheckSum((uint8_t *)&BMSMessage,(uint8_t *)&BMSMessage+sizeof(BMSMessage)-1);	
-		FramWrite((uint8_t *)&BMSMessage,BMS_MSG_PARA_ADDR,sizeof(BMSMessage));       //存储参数到铁电		
-				
+		FramWrite((uint8_t *)&BMSMessage,BMS_MSG_PARA_ADDR,sizeof(BMSMessage));       //存储参数到铁电						
 }
 
 void BMSMain (void)
 {   
-  		
-		Charger_RECData_Pro();                                     // 处理充电桩过来的数据   
-
+	 static uint16_t BROcnt,BCLcnt,BCScnt,BSMcnt;
+	 static uint32_t BSTcnt = 0;
+	 BMSMessage.ChargeStage=0;
+	 BMSMessage.BMSStopFlag=0;
 	
-/*          充电阶段处理函数                 */
+  while (1) 
+ {						
+    OSTimeDlyHMSM(0,0,0,1);	
+		Charger_RECData_Pro();                                                       // 处理充电桩过来的数据 ，主要是被动处理函数  
+	 
+/*          充电阶段处理函数 ,主要是模拟器这边的主动处理函数                */
 	switch (BMSMessage.ChargeStage)
-	{
- 		
-		case 1:	 	
-		 	  if((BMSMessage.BMSStopFlag==1)&&(CAN0TickCnt%10==0))    //停机时 10ms发送一次
-			   BMS_BST(); 
-	       break; 
+	{ 		
+		case 1:	 	                           //握手阶段
+	       break; 				
 				
-				
-	  case 2:			
-	 		 	 if((BMSMessage.BMSStopFlag==1)&&(CAN0TickCnt%10==0))    //停机时 10ms发送一次
-			   BMS_BST(); 
+	  case 2:			                         //配置阶段
+			
 					break;
 	 
-		case 3:	 		        			
-	     	if (CAN0TickCnt%250==0)            //电池充电总状态，250ms发送一次  
-		    {
+		case 3:	 	                           //充电阶段
+         BCScnt++;
+		     BSMcnt++;
+		     BCLcnt++;
+	     	if (BCScnt>=250)                 //电池充电总状态，250ms发送一次  
+		    {       
 					BMS_BCS();
-					BMS_BSM();                          //todu
-		    }
-				else if (CAN0TickCnt%50==0)       //充电需求50ms发送一次
+					BCScnt=0;
+		    }	
+      	if (BSMcnt>=250)                 //电池充电总状态，250ms发送一次  
 		    {
-					BMS_BCL();	                     
+        	BMS_BSM(); 
+					BSMcnt=0;
+		    }
+				else if (BCLcnt>=50)             //充电需求50ms发送一次
+		    {
+					BMS_BCL();	 
+         	BCLcnt=0;				
 		     }
 /*                       负载开启条件                   */				
 				if(BMSMessage.RequestVoltage*10>ChargerMsg.ChargeVoltage)
@@ -119,21 +127,20 @@ void BMSMain (void)
 				  	BMSMessage.SOC=0;
 				   BMSMessage.BMSStopFlag=1;
 				}				
-          break;							
-
-		case 4: 
-		     if((BMSMessage.BMSStopFlag==1)&&(CAN0TickCnt%10==0))    //停机时 10ms发送一次
-			   BMS_BST(); 
+          break;		
+				
+		case 4:
+			   BSTcnt++;
+    	if((BMSMessage.BMSStopFlag==1)&&(BSTcnt%10==0))         //停机时 10ms发送一次
+		  	 BMS_BST();			
 				 DC_SWITCH_OFF();
 	       break;
 				 
 		default:
-			  CAN0TickCnt= 0 ;
-	    	BMSMessage.ChargeStage=0;
          break;	 
-	 }		
+	 }	
+ }	
 }
-
 	
 void BMS_BHM(void)    		           //    握手    收到BMS 动数据传输协议TCPM（由于数据长度大于8，共41）传输电池组身份编码信息BRM
 {
@@ -171,7 +178,6 @@ void BMS_BRM_Msg01(void)
 	 CAN_Data[6]=0x0a ;
 	 CAN_Data[7]=0x70 ;
 	 WriteCAN0(8,1, CANID,CAN_Data);	
-	 OSTimeDlyHMSM(0, 0, 0, 5);           //挂起5ms，以便其他线程
 }	
 
 void BMS_BRM_Msg02(void)
@@ -186,7 +192,6 @@ void BMS_BRM_Msg02(void)
 	 CAN_Data[6]=0xff ;
 	 CAN_Data[7]=0xff ; 				
 	 WriteCAN0(8,1, CANID,CAN_Data);
-	 OSTimeDlyHMSM(0, 0, 0, 5);           //挂起5ms，以便其他线程
 }	
 
 void BMS_BRM_Msg03(void)
@@ -203,7 +208,6 @@ void BMS_BRM_Msg03(void)
 	 CAN_Data[7]=0xff ;  		
 	 WriteCAN0(8,1, CANID,CAN_Data);
 	 OSTimeDly(10);
-	 OSTimeDlyHMSM(0, 0, 0, 5);           //挂起100ms，以便其他线程
 }	
 
 void BMS_BRM_Msg04(void)
@@ -219,7 +223,6 @@ void BMS_BRM_Msg04(void)
 	 CAN_Data[6]=0xff ;
 	 CAN_Data[7]=0xff ;  			
 	 WriteCAN0(8,1, CANID,CAN_Data);
-	 OSTimeDlyHMSM(0, 0, 0, 5);           //挂起100ms，以便其他线程
 }
 
 void BMS_BRM_Msg05(void)
@@ -235,7 +238,6 @@ void BMS_BRM_Msg05(void)
 	 CAN_Data[6]=0xff ;
 	 CAN_Data[7]=0xff ;  		
 	 WriteCAN0(8,1, CANID,CAN_Data);
-	 OSTimeDlyHMSM(0, 0, 0, 5);           //挂起100ms，以便其他线程
 }
 
 void BMS_BRM_Msg06(void)
@@ -250,7 +252,6 @@ void BMS_BRM_Msg06(void)
 	 CAN_Data[6]=0xff ;
 	 CAN_Data[7]=0xff ;  	
 	 WriteCAN0(8,1, CANID,CAN_Data);
-	 OSTimeDlyHMSM(0, 0, 0, 5);           //挂起100ms，以便其他线程
 }
 void BMS_BRM_Msg07(void)
 {  
@@ -291,7 +292,6 @@ void BMS_BCP_DATA_01(void)		// 电池参数 动力蓄电池充电参数报文  01 77 01 e8 03 2
 	 CAN_Data[6]=0x02 ;
 	 CAN_Data[7]=0x4c ;		
 	 WriteCAN0(8,1, CANID,CAN_Data);
-	OSTimeDlyHMSM(0, 0, 0, 5);           //挂起100ms，以便其他线程运行
 
 }
 
@@ -323,7 +323,7 @@ void BMS_BRO(uint8_t data)	           	// 电池参数 动力蓄电池充电参数报文 aa
 	 CAN_Data[0]=0xaa ;
 	}
 	 WriteCAN0(1,1, CANID,CAN_Data);
-   OSTimeDlyHMSM(0, 0, 0, 250);           //挂起100ms，以便其他线程运行
+	OSTimeDlyHMSM(0,0,0,250);
 }
 
 void BMS_BCL(void)		
@@ -376,11 +376,11 @@ void BMS_BCS_Data_01(void)
 	 CAN_Data[2]=(ChargerMsg.ChargeVoltage*10>>8)&0xff;
 	 CAN_Data[3]=(4000-ChargerMsg.ChargeCurrent*10)%256 ;
 	 CAN_Data[4]=((4000-ChargerMsg.ChargeCurrent*10)>>8)&0xff ;
-	 CAN_Data[5]=(BMSMessage.SingleVoltage&0xf00)>>8;
-	 CAN_Data[6]=BMSMessage.SingleVoltage%256;	
+	 CAN_Data[5]=(BMSMessage.MAXSingleVoltage&0xf00)>>8;
+	 CAN_Data[6]=BMSMessage.MAXSingleVoltage%256;	
 	 CAN_Data[7]=BMSMessage.SOC;	 			
 	 WriteCAN0(8,1, CANID,CAN_Data);
-	OSTimeDlyHMSM(0, 0, 0, 5);        
+ 
 }
 
 void BMS_BCS_Data_02(void)		
@@ -400,11 +400,11 @@ void BMS_BCS_Data_02(void)
 void BMS_BSM(void)		
 {
 	 CANID=0x181356f4 ;
-	 CAN_Data[0]=0x00 ;
-	 CAN_Data[1]=0x32 ;
-	 CAN_Data[2]=0x00 ;
-	 CAN_Data[3]=0x32 ;
-	 CAN_Data[4]=0x00 ;
+	 CAN_Data[0]=0x08 ;
+	 CAN_Data[1]=BMSMessage.MAXSingleVoltageTemp+50 ;
+	 CAN_Data[2]=0x12 ;
+	 CAN_Data[3]=BMSMessage.MINSingleVoltageTemp+50 ;
+	 CAN_Data[4]=0x20 ;
 	 CAN_Data[5]=0x00 ;
 	 CAN_Data[6]=0x10 ;  
 			
@@ -507,8 +507,7 @@ void CRO_Analyse(void)
 					
 			       }
 		        else if((MessageCAN0.DATAA&0xff)==0xaa)
-		       	{
-							 
+		       	{							 
 			         BMS_BRO(0xAA) ;                                          //闭合K5,K6,绝缘检测开启后 BRO发AA
 							 if(PRINT_STRING)
 							 Print("%s\n", "chargestate 3 ,   charging !");
@@ -519,14 +518,11 @@ void CRO_Analyse(void)
 					     BMS_BCS();
 							 FAN_SWITCH_ON();
 			       }	
-				}
+			}
 }	
 void CCS_Analyse(void)	
 { 
-//		 if(BMSMessage.ChargeStage==2)
-//		 {		 
-//	      BMSMessage.ChargeStage= 3 ;
-//		 }	 
+ 
 }	
 
 void CST_Analyse(void)	

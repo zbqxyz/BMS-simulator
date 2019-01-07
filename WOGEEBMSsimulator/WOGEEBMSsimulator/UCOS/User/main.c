@@ -38,7 +38,6 @@ static void SystemParameterInit(void);
 
 SYS_PARA   Sys_PARA;
 
-volatile unsigned long CAN0TickCnt;
 
 /*********************************************************************************************************
 ** Function name:	      main
@@ -164,15 +163,7 @@ static  void  taskBMS(void  *parg)
 	(void)parg;
 	 if(PRINT_STRING)
 	 Print("%s\n", "BMSMain Task Action !");
-	 CAN0TickCnt = 0;
-	 BMSMessage.ChargeStage=0;
-	 BMSMessage.BMSStopFlag=0;
-    while (1) 
-	{		
-		CAN0TickCnt++;
-    OSTimeDlyHMSM(0,0,0,1);
-		BMSMain();	
-	}
+	 BMSMain();
 }
 
 

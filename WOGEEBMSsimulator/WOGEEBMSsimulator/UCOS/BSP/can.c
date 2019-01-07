@@ -263,8 +263,8 @@ unsigned char WriteCAN0(unsigned char LEN,unsigned char FF, unsigned int ID,unsi
     } else {
         MessageDetailT.LEN=LEN;
         MessageDetailT.FF=FF;
-        MessageDetailT.CANID=ID;
-        MessageDetailT.DATAA=0;			                                /* 先清零                       */
+        MessageDetailT.CANID=ID; 
+        MessageDetailT.DATAA=0;			                                /* 先清零                                                                */
         MessageDetailT.DATAB=0;
 	
         for(i=0;i<LEN;i++) {
@@ -275,6 +275,7 @@ unsigned char WriteCAN0(unsigned char LEN,unsigned char FF, unsigned int ID,unsi
             }
         }
 				CANSend(0, 1);
+       OSTimeDlyHMSM(0, 0, 0, 5);                                   /*  防止发送过快 ,缓冲区未发送完毕又写入下一帧数据，不能发送               */
 	 return(1);
     }
 		
